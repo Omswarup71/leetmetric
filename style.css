@@ -1,0 +1,360 @@
+/* Global Styles */
+:root {
+    --primary-color: #ffa116;
+    --secondary-color: #1a1a1a;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --light-text: #777;
+    --easy-color: #00b8a3;
+    --medium-color: #ffc01e;
+    --hard-color: #ff375f;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 0;
+}
+
+nav ul li a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.user-actions .btn {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.user-actions .login {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.user-actions .register {
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: white;
+}
+
+/* Main Content Layout */
+main {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+.sidebar {
+    width: 300px;
+    background-color: white;
+    border-right: 1px solid #eaeaea;
+    overflow-y: auto;
+    height: calc(100vh - 70px);
+    position: sticky;
+    top: 70px;
+}
+
+.content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Sidebar Styles */
+.sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter select {
+    padding: 0.3rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.problem-list {
+    padding: 0.5rem;
+}
+
+.problem-item {
+    padding: 0.8rem 1rem;
+    margin: 0.3rem 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.problem-item:hover {
+    background-color: #f5f5f5;
+}
+
+.problem-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.problem-item .difficulty {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    color: white;
+}
+
+.problem-item .difficulty.easy {
+    background-color: var(--easy-color);
+}
+
+.problem-item .difficulty.medium {
+    background-color: var(--medium-color);
+}
+
+.problem-item .difficulty.hard {
+    background-color: var(--hard-color);
+}
+
+/* Problem Content Styles */
+.problem-content {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.problem-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.problem-header h1 {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+}
+
+.difficulty {
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.difficulty.easy {
+    background-color: rgba(0, 184, 163, 0.1);
+    color: var(--easy-color);
+}
+
+.difficulty.medium {
+    background-color: rgba(255, 192, 30, 0.1);
+    color: var(--medium-color);
+}
+
+.difficulty.hard {
+    background-color: rgba(255, 55, 95, 0.1);
+    color: var(--hard-color);
+}
+
+.actions {
+    margin-left: auto;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.actions .btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--light-text);
+    padding: 0.3rem;
+}
+
+.actions .btn:hover {
+    color: var(--primary-color);
+}
+
+.problem-description {
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.problem-description p {
+    margin-bottom: 1rem;
+}
+
+.problem-description pre {
+    background-color: #f6f8fa;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Code Editor Styles */
+.code-editor {
+    margin-bottom: 2rem;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+#language-select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+#editor {
+    width: 100%;
+    height: 300px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    resize: none;
+    margin-bottom: 0.5rem;
+}
+
+.editor-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    border: none;
+}
+
+.btn.run-code {
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn.submit-code {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Test Cases Styles */
+.test-cases {
+    margin-top: 2rem;
+}
+
+.test-case-item {
+    padding: 1rem;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.test-case-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.test-case-status {
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.test-case-status.success {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--success-color);
+}
+
+.test-case-status.error {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--error-color);
+}
+
+.test-case-content {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    background-color: #f6f8fa;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+    }
+    
+    .content {
+        padding: 1rem;
+    }
+}
